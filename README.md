@@ -1,12 +1,12 @@
 # Spending Profile 
 
-Spending Profile is a website I wrote to track finances. I posted the code here out of interest, mainly to note changes in software development practices since 2009.
+Spending Profile is a website I wrote to track finances. I posted the code here out of interest, mainly to explore changes in software development practices since 2009.
 
-You can visit the website at (https://www.spendingprofile.com/). There is a live demo - use Chrome for that.
+You can visit the website <a href="https://www.spendingprofile.com/" target="new">here</a>. There is a live demo (use Chrome or Edge).
 
 ## Differences in software development practices since 2009
 
-One big difference is simply the choice of markup and programming languages.
+One big difference is simply the choice programming languages, frameworks and libraries.
 
 * **PHP**. In 2009 I used PHP for everything on the server side, whereas today I would choose Node.js.
 
