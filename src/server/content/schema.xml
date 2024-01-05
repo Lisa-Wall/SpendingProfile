@@ -1,0 +1,182 @@
+<?xml version='1.0'?>
+<SpendingProfile
+
+	Ids="TYPE:INTEGER;MIN:1"
+	Date="TYPE:DATE"
+	Email="TYPE:EMAIL;MAX:63"
+	Notes="TYPE:STRING;MAX:127"
+	Amount="TYPE:FLOAT;MIN:0;MAX:9999999999.99"
+	BoolInt="TYPE:BOOLEAN;RETURN:STRING_INT"
+
+	BoolOptionalFalse="TYPE:BOOLEAN;__OPTIONAL:false"
+
+
+	DateOptional="TYPE:DATE;__OPTIONAL:__NULL"
+
+	Name32="TYPE:STRING;MIN:1;MAX:31"
+	Name64="TYPE:STRING;MIN:1;MAX:63"
+	Name128="TYPE:STRING;MIN:1;MAX:127"
+
+	Name0to32="TYPE:STRING;MIN:0;MAX:31"
+	Name0to64="TYPE:STRING;MIN:0;MAX:63"
+
+	PieTypes="TYPE:ENUM;Vendors:vendors;Categories:categories;Accounts:accounts"
+	GoalFields="TYPE:ENUM;Name;Category;Note;Amount;From;To"
+	TransFields="TYPE:ENUM;Account;Vendor;Category;Date;Debit;Fixed;Amount;Notes"
+
+	OrderIn="TYPE:ENUM;ASC;DESC;__NULL;__OPTIONAL:__NULL"
+	OrderBy="TYPE:ENUM;Id;Account;Vendor;Category;Date;Fixed;Amount;Notes;__NULL;__OPTIONAL:__NULL"
+
+	GraphSize="TYPE:INTEGER;MIN:1;MAX:2048"
+	PieFontSize="TYPE:INTEGER;MIN:1;MAX:32;__OPTIONAL:8"
+
+	AveragePeriod="TYPE:ENUM;-1 month;-3 month;-6 month;-12 month;__OPTIONAL:__NULL"
+	BudgetOrderBy="TYPE:ENUM;Active;Average;Name;Amount;Total;Percent;__OPTIONAL:__NULL"
+	BudgetActiveOnly="TYPE:BOOLEAN;RETURN:STRING_INT;__OPTIONAL:__NULL"
+>
+
+	<User>
+		<logout />
+		<login Email="%Email" Password="TYPE:STRING;MIN:1;MAX:32;TRUNC:FALSE" />
+
+		<setEmail Email="%Email" __authenticate="TRUE" />
+		<setCurrency Currency="TYPE:STRING;MIN:1;MAX:4" __authenticate="TRUE" />
+		<setPreference Preference="TYPE:STRING;MAX:255;TRUNC:FALSE" __authenticate="TRUE" />
+		<setPassword OldPassword="%Name64" NewPassword="TYPE:STRING;MIN:1;MAX:64;TRUNC:FALSE" __authenticate="TRUE" />
+
+		<create Email="%Email" />
+		<resetPassword Email="%Email" />
+
+		<sendFeedback Message="TYPE:STRING" __authenticate="TRUE" />
+
+		<tellAFriend Email="%Email" Message="TYPE:STRING;MAX:255" __authenticate="TRUE" />
+		<getReferrals __authenticate="TRUE" />
+
+		<backup __authenticate="TRUE" />
+	</User>
+
+	<Demo>
+		<start />
+		<cleanAll />
+	</Demo>
+
+	<Account>
+		<getAll __authenticate="TRUE" />
+		<getTree __authenticate="TRUE" />
+		<add Name="%Name64" __authenticate="TRUE" />
+		<delete Id="%Ids" __authenticate="TRUE" />
+		<rename Id="%Ids" Name="%Name64" Replace="%BoolOptionalFalse" __authenticate="TRUE" />
+
+		<expenses __authenticate="TRUE" />
+	</Account>
+
+	<Category>
+		<getAll __authenticate="TRUE" />
+		<getTree __authenticate="TRUE" />
+		<add Name="%Name128" __authenticate="TRUE" />
+		<delete Id="%Ids" __authenticate="TRUE" />
+		<rename Id="%Ids" Name="%Name128" Replace="%BoolOptionalFalse" __authenticate="TRUE" />
+
+		<expenses __authenticate="TRUE" />
+	</Category>
+
+	<Vendor>
+		<getAll __authenticate="TRUE" />
+		<getTree __authenticate="TRUE" />
+		<add Name="%Name64" __authenticate="TRUE" />
+		<delete Id="%Ids" __authenticate="TRUE" />
+		<rename Id="%Ids" Name="%Name64" Replace="%BoolOptionalFalse" __authenticate="TRUE" />
+
+		<expenses __authenticate="TRUE" />
+	</Vendor>
+
+	<Transaction>
+		<getPeriodFilter From="%DateOptional" To="%DateOptional" Filter="TYPE:STRING;MAX:128;__OPTIONAL:__NULL" OrderBy="%OrderBy" OrderIn="%OrderIn" __authenticate="TRUE" />
+
+		<delete Id="%Ids" __authenticate="TRUE" />
+		<deleteAll Transactions="__self" __authenticate="TRUE" />
+		<update Id="%Ids" Field="%TransFields" Value="TYPE:STRING" __authenticate="TRUE" />
+		<add Account="%Name0to64" Vendor="%Name0to64" Category="%Name128" Date="%Date" Debit="%BoolInt" Fixed="%BoolInt" Amount="%Amount" Notes="%Notes" __authenticate="TRUE" />
+
+		<copy Transactions="__self" Date="%Date" UseFullDate="%BoolOptionalFalse" __authenticate="TRUE" />
+	</Transaction>
+
+	<Receipt>
+		<get Id="%Ids" __authenticate="TRUE" />
+		<add Id="%Ids" Field="%Name32" Callback="%Name128" __authenticate="TRUE" />
+		<remove Id="%Ids" __authenticate="TRUE" />
+		<upload Name="%Name32" Field="%Name32" Callback="%Name128" __authenticate="TRUE" />
+		<clear Name="%Name32" __authenticate="TRUE" />
+		<clearAll __authenticate="TRUE" />
+	</Receipt>
+
+	<Budget>
+		<getAll From="%DateOptional" To="%DateOptional" AveragePeriod="%AveragePeriod" ActiveOnly="%BudgetActiveOnly" OrderBy="%BudgetOrderBy" OrderIn="%OrderIn" Tree="%BoolOptionalFalse" __authenticate="TRUE" />
+
+		<update Id="%Ids" Amount="TYPE:FLOAT" Active="%BoolInt" __authenticate="TRUE" />
+	</Budget>
+
+	<Goal>
+		<getAll __authenticate="TRUE" />
+		<delete Id="%Ids" __authenticate="TRUE" />
+		<updateField Id="%Ids" Field="%GoalFields" Value="TYPE:STRING" __authenticate="TRUE" />
+		<add Name="%Name32" From="%Date" To="%Date" Amount="%Amount" Category="%Name128" Note="%Notes" __authenticate="TRUE" />
+		<update Id="%Ids" Name="%Name32" From="%Date" To="%Date" Amount="%Amount" Category="%Name128" Note="%Notes" __authenticate="TRUE" />
+	</Goal>
+
+	<Export>
+		<export Format="TYPE:ENUM;OFX;CSV" Attributes="__self" __authenticate="TRUE" />
+	</Export>
+
+	<Import>
+		<preview Attributes="__self" __authenticate="TRUE" />
+		<import Transactions="__self" __authenticate="TRUE" />
+
+		<getPreference />
+		<setPreference GuessVendor="TYPE:BOOLEAN" FormatVendor="TYPE:BOOLEAN" FormatNotes="TYPE:BOOLEAN" />
+	</Import>
+
+	<Graphs>
+		<getMap Tag="%PieTypes" />
+		<getPie Tag="%PieTypes" Width="%GraphSize" Height="%GraphSize" Flat="TYPE:BOOLEAN;__OPTIONAL:__NULL" FontSize="%PieFontSize" Name="TYPE:STRING;MAX:128;__OPTIONAL:" ShowExtended="TYPE:BOOLEAN;__OPTIONAL:true" MinMapAngle="TYPE:INTEGER;MIN:1;MAX:90;__OPTIONAL:25" MinTextPixels="TYPE:INTEGER;MIN:1;__OPTIONAL:20" __authenticate="TRUE" />
+
+		<getBalanceSummary Width="%GraphSize" Height="%GraphSize" FontSize="%PieFontSize" />
+	</Graphs>
+
+	<Analysis>
+		<setGraph From="%DateOptional" To="%DateOptional" ViewBy="TYPE:ENUM;TOTALS;CATEGORY;__OPTIONAL:__NULL" GraphType="TYPE:ENUM;BAR;LINE;__OPTIONAL:__NULL" TotalExpenses="TYPE:BOOLEAN;RETURN:STRING_INT;__OPTIONAL:__NULL" TotalIncome="TYPE:BOOLEAN;RETURN:STRING_INT;__OPTIONAL:__NULL" Categories="TYPE:STRING;__OPTIONAL:__NULL" />
+		<getGraph Width="%GraphSize" Height="%GraphSize" />
+		<getMap />
+	</Analysis>
+
+	<Statement>
+		<download Month="%Date" __authenticate="TRUE"/>
+	</Statement>
+	
+	<Filter>
+		<getAll __authenticate="TRUE" />
+		<add Filter="TYPE:STRING;MIN:1;MAX:256;TRUNC:FALSE" __authenticate="TRUE" />
+		<delete Id="TYPE:INTEGER;MIN:1" __authenticate="TRUE" />
+	</Filter>
+
+	<Admin>
+		<getUsers OrderBy="TYPE:ENUM;Id;Email;CreatedOn;LastSignIn;Vendors;Accounts;Categories;Transactions;__OPTIONAL:LastSignIn" OrderIn="TYPE:enum;ASC;DESC;__OPTIONAL:DESC" __administrator="TRUE"/>
+		<getTags Tag="TYPE:ENUM;vendors;accounts;categories;__OPTIONAL:categories" OrderBy="TYPE:ENUM;Name;Count;__OPTIONAL:Count" OrderIn="TYPE:enum;ASC;DESC;__OPTIONAL:DESC" __administrator="TRUE"/>
+		<getUserCount __administrator="TRUE"/>
+		<getUserStats From="%DateOptional" __administrator="TRUE"/>
+		<getSignedInHistory __administrator="TRUE"/>
+		<getCreatedOnHistory __administrator="TRUE"/>
+		<getTransactionsAndTagsStats __administrator="TRUE"/>
+		<getRequests __administrator="TRUE"/>
+		<getRequestStats __administrator="TRUE"/>
+	</Admin>
+	
+	<Ad>
+		<get Index="TYPE:INTEGER" />
+	</Ad>
+
+	<Utility>
+		<echoString Message="TYPE:STRING" />
+	</Utility>
+
+</SpendingProfile>

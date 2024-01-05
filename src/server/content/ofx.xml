@@ -1,0 +1,36 @@
+<OFX>
+  <SIGNONMSGSRSV1>
+    <SONRS>
+      <STATUS>
+        <CODE>0</CODE>
+        <SEVERITY>INFO</SEVERITY>
+        <MESSAGE>OK</MESSAGE>
+      </STATUS>
+      <DTSERVER></DTSERVER>
+      <LANGUAGE>ENG</LANGUAGE>
+      <FI>
+        <ORG>Spending Profile</ORG>
+      </FI>
+    </SONRS>
+  </SIGNONMSGSRSV1>
+  <BANKMSGSRSV1>
+    <STMTTRNRS>
+      <STMTRS>
+        <CURDEF></CURDEF>
+        <BANKACCTFROM>
+          <BANKID></BANKID>
+          <ACCTID></ACCTID>
+          <ACCTTYPE></ACCTTYPE>
+        </BANKACCTFROM>
+        <BANKTRANLIST>
+          <DTSTART></DTSTART>
+          <DTEND></DTEND>
+        </BANKTRANLIST>
+      </STMTRS>
+      <LEDGERBAL>
+        <BALAMT></BALAMT>
+        <DTASOF></DTASOF>
+      </LEDGERBAL>
+    </STMTTRNRS>
+  </BANKMSGSRSV1>
+</OFX>

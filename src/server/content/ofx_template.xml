@@ -1,0 +1,61 @@
+OFXHEADER:100
+DATA:OFXSGML
+VERSION:103
+SECURITY:TYPE1
+ENCODING:USASCII
+CHARSET:1252
+COMPRESSION:NONE
+OLDFILEUID:NONE
+NEWFILEUID:NONE
+
+<OFX>
+  <SIGNONMSGSRSV1>    <!-- Server response header -->
+    <SONRS>
+      <STATUS>        <!-- Status aggregate REQUIRED -->
+        <CODE>0</CODE>            <!-- REQUIRED -->
+        <SEVERITY>INFO</SEVERITY> <!-- Severity of the error (INFO | WARN | ERROR ) REQUIRED -->
+        <MESSAGE>OK</MESSAGE>
+      </STATUS>
+      <DTSERVER></DTSERVER>     <!-- The server time on generation REQUIRED -->
+      <LANGUAGE>ENG</LANGUAGE>  <!-- Language used in text         REQUIRED -->
+      <FI>
+        <ORG>Spending Profile</ORG>
+      </FI>
+    </SONRS>
+  </SIGNONMSGSRSV1>
+  <BANKMSGSRSV1>        <!-- Server response for bank information   REQUIRED -->
+    <STMTTRNRS>         <!-- Statements response container          REQUIRED -->
+      <STMTRS>          <!-- REQUIRED -->
+        <CURDEF></CURDEF>     <!-- Defines a 3 character currency   REQUIRED -->
+        <BANKACCTFROM>        <!-- Bank-account-from aggregate      REQUIRED -->
+          <BANKID></BANKID>       <!-- Routing and transit number,  REQUIRED -->
+          <ACCTID></ACCTID>       <!-- Account number,              REQUIRED -->
+          <ACCTTYPE></ACCTTYPE>   <!-- Type of account, (CHECKING | SAVINGS | MONEYMARKT | CREDITLINE) REQUIRED -->
+        </BANKACCTFROM>
+        <BANKTRANLIST>        <!-- Statement-transaction-data aggregate -->
+          <DTSTART></DTSTART>     <!-- Start date of enclosed transactions  REQURIED -->
+          <DTEND></DTEND>         <!-- End date of enclosed transactions    REQURIED -->
+
+          <STMTTRN>               <!-- A list of all transactions -->
+            <TRNTYPE></TRNTYPE>       <!-- Transaction type (CREDIT | DEBIT | INT | DIV | FEE | SRVCHG | DEP | ATM | POS | XFER | CHECK | CASH | DIRECTDEP | DIRECTDEBIT | REPEATPMT | OTHER) REQUIRED -->
+            <DTPOSTED></DTPOSTED>     <!-- Date transaction was posted to account REQUIRED -->
+            <TRNAMT></TRNAMT>         <!-- Amount of transaction REQUIRED -->
+            <FITID></FITID>           <!-- Transaction ID issued by financial institution. Used to detect duplicate downloads REQUIRED -->
+            <NAME></NAME>             <!-- Name of payee or description of transaction REQUIRED -->
+            <MEMO></MEMO>             <!-- Extra information (not in <NAME>) -->
+          </STMTTRN>
+
+        </BANKTRANLIST>
+      </STMTRS>
+      <LEDGERBAL>       <!-- Ledger balance aggregate            REQUIRED -->
+        <BALAMT></BALAMT>     <!-- Ledger balance amount, amount REQUIRED -->
+        <DTASOF></DTASOF>     <!-- Balance date, datetime        REQUIRED -->
+      </LEDGERBAL>
+      <AVAILBAL>        <!-- Available balance aggregate -->
+        <BALAMT></BALAMT>     <!-- Available balance amount, amount REQUIRED -->
+        <DTASOF></DTASOF>     <!-- Balance date, datetime           REQUIRED -->
+      </AVAILBAL>
+    </STMTTRNRS>
+  </BANKMSGSRSV1>
+</OFX>
+

@@ -1,0 +1,80 @@
+
+
+.ui_window
+{
+	overflow: hidden;
+	border: <?=$PRIMARY_2?> 1px solid;
+	background-color: <?=$SECONDARY_1?>;
+}
+
+.ui_window_title,
+.ui_window_titlebar
+{
+	<?=$FONT?>
+}
+
+.ui_window_titlebar
+{
+	height: 16px;
+	width: 100%;
+
+	color: white;
+	font-weight: bold;
+
+	padding: 2px;
+	border-bottom: <?=$PRIMARY_2?> 1px solid;
+	background-image: url(<?=getImage('images/ui/window/title_bg.png')?>);
+
+	padding-left: 5px;
+
+	cursor: move;
+}
+
+
+.ui_window_button,
+.ui_window_button_over,
+.ui_window_button_down
+{
+	width: 29px;
+	height: 15px;
+	cursor: default;
+	background-repeat:no-repeat;
+	background-position: 0px 0px;
+}
+
+.ui_window_button_over
+{
+	background-position: -29px 0px;
+}
+
+.ui_window_button_down
+{
+	background-position: -58px 0px;
+}
+
+
+
+.ui_helptip
+{
+	padding: 3px;
+	border: <?=$PRIMARY_2?> 1px solid;
+	background: white;
+}
+
+.ui_helptip_title
+{
+	<?=$FONT?>
+	color: <?=$TEXT_3?>;
+}
+
+.ui_helptip_titlebar
+{
+	font-weight: bold;
+	padding: 2px;
+	background-image: url(<?=getImage('images/ui/window/title_bg_simple.png')?>);
+}
+
+.ui_helptip_pane
+{
+	padding: 5px;
+}

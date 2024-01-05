@@ -1,0 +1,128 @@
+
+<Demo>
+
+	<Accounts>
+		<Account Name="Checking" />
+		<Account Name="Saving" />
+		<Account Name="Credit Card" />
+	</Accounts>
+
+	<Vendors>
+		<Vendor Name="McDonald's" />
+		<Vendor Name="Tim Horton's" />
+		<Vendor Name="Terriyaki" />
+		<Vendor Name="Quizno's" />
+		<Vendor Name="Pizza Pizza" />
+		<Vendor Name="St. Hubert" />
+
+		<Vendor Name="Business Depot" />
+
+		<Vendor Name="Rona" />
+		<Vendor Name="Home Depot" />
+
+		<Vendor Name="Rogers Tel" />
+		<Vendor Name="Bell Canada" />
+		<Vendor Name="Embridge Gas" />
+		<Vendor Name="Ottawa Hydro" />
+		<Vendor Name="City Utilities" />
+		<Vendor Name="City Property Tax" />
+
+		<Vendor Name="Visa" />
+		<Vendor Name="Master Card" />
+		<Vendor Name="National Bank" />
+
+		<Vendor Name="Loblaws" />
+		<Vendor Name="Loeb" />
+		<Vendor Name="Food Basics" />
+
+		<Vendor Name="Ikea" />
+		<Vendor Name="Sears" />
+		<Vendor Name="Zellars" />
+		<Vendor Name="Staples" />
+		<Vendor Name="The Bay" />
+		<Vendor Name="Wal Mart" />
+		<Vendor Name="Costco" />
+		<Vendor Name="Tip Top Tailors" />
+		<Vendor Name="Things Engraved" />
+		<Vendor Name="Amazon" />
+		<Vendor Name="Sport Check" />
+
+		<Vendor Name="Traval Agency" />
+		<Vendor Name="The Beer Store" />
+
+		<Vendor Name="Taxi" />
+		<Vendor Name="Sun Life" />
+		<Vendor Name="Pharma Plus" />
+
+		<Vendor Name="Gas Station" />
+		<Vendor Name="Parking Garage" />
+
+		<Vendor Name="Coliseum" />
+		<Vendor Name="Silver City" />
+
+	</Vendors>
+
+	<Category>
+		<Category Name="Cable TV" Budget="0" Active="0" />
+		<Category Name="Internet" Budget="0" Active="0" />
+		<Category Name="Phone" Budget="0" Active="0" />
+		<Category Name="Cell Phone" Budget="0" Active="0" />
+
+		<Category Name="Home:Heating" Budget="0" Active="0" />
+		<Category Name="Home:Electricity" Budget="0" Active="0" />
+		<Category Name="Home:Insurance" Budget="0" Active="0" />
+		<Category Name="Home:Water" Budget="0" Active="0" />
+
+		<Category Name="Home:Property Tax" Budget="0" Active="0" />
+		<Category Name="Home:Mortgage" Budget="0" Active="0" />
+		<Category Name="Home:Rent" Budget="0" Active="0" />
+		<Category Name="Home:Condominium Fee" Budget="0" Active="0" />
+
+		<Category Name="Home:General" Budget="0" Active="0" />
+		<Category Name="Home:Maintenance" Budget="0" Active="0" />
+		<Category Name="Home:Renovations" Budget="0" Active="0" />
+
+		<Category Name="Car:Gas" Budget="0" Active="0" />
+		<Category Name="Car:Insurance" Budget="0" Active="0" />
+		<Category Name="Car:Maintenance" Budget="0" Active="0" />
+		<Category Name="Car:Oil Change" Budget="0" Active="0" />
+		<Category Name="Car:Parking" Budget="0" Active="0" />
+		<Category Name="Car:Fines" Budget="0" Active="0" />
+
+		<Category Name="Interest" Budget="0" Active="0" />
+		<Category Name="Bank Fees" Budget="0" Active="0" />
+		<Category Name="Savings" Budget="0" Active="0" />
+		<Category Name="RRSP" Budget="0" Active="0" />
+		<Category Name="Investments" Budget="0" Active="0" />
+
+		<Category Name="Food" Budget="0" Active="0" />
+		<Category Name="Junk Food" Budget="0" Active="0" />
+		<Category Name="Restaurants" Budget="0" Active="0" />
+		<Category Name="Groceries" Budget="0" Active="0" />
+
+		<Category Name="Office Supplies" Budget="0" Active="0" />
+		<Category Name="Hobbies" Budget="0" Active="0" />
+		<Category Name="Health" Budget="0" Active="0" />
+		<Category Name="Sports" Budget="0" Active="0" />
+		<Category Name="Gifts" Budget="0" Active="0" />
+		<Category Name="Donations" Budget="0" Active="0" />
+		<Category Name="Clothes" Budget="0" Active="0" />
+		<Category Name="General" Budget="0" Active="0" />
+
+		<Category Name="Intertanment:Cinema" Budget="0" Active="0" />
+		<Category Name="Intertanment:Movies" Budget="0" Active="0" />
+		<Category Name="Intertanment:General" Budget="0" Active="0" />
+
+		<Category Name="Travel" Budget="0" Active="0" />
+		<Category Name="Travel:Tickets" Budget="0" Active="0" />
+		<Category Name="Travel:Accommodation" Budget="0" Active="0" />
+
+		<Category Name="Salary" Budget="0" Active="0" />
+
+	</Category>
+
+	<Transactions>
+		<Transaction Account="" Vendor="" Category="" Date="" Debit="" Fixed="" Amount="" Notes="" />
+	</Transactions>
+
+</Demo>

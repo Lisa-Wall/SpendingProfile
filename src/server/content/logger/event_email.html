@@ -1,0 +1,98 @@
+<html>
+  <head>
+    <style>
+      .callstack_table
+      {
+        font-size: 9pt;
+        font-family: arial;
+
+        margin: 5px;
+
+        empty-cells: show;
+      }
+
+      .callstack_header
+      {
+        text-align: center;
+        font-weight: bold;
+      }
+
+      td
+      {
+        white-space: nowrap;
+      }
+
+      .callstack_file
+      {
+        color: blue;
+      }
+
+      .callstack_line
+      {
+        color: blue;
+        text-align: center;
+      }
+
+      .callstack_center
+      {
+        text-align: center;
+      }
+
+      .fieldset
+      {
+        padding: 4px;
+
+        font-size: 9pt;
+        font-family: arial;
+
+        border: #64748c 1px solid;
+      }
+    </style>
+  </head>
+  <body class="label">
+
+    <fieldset class="fieldset">
+      <legend><b>Message</b></legend>
+      <div style="font-style:italic">%MESSAGE%</div>
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <legend><b>Details</b></legend>
+      <table class="callstack_table">
+        <tr>
+          <td width="100px">Level:</td><td style="font-style:italic">%LEVEL%</td>
+        </tr>
+        <tr>
+          <td>Date and Time:</td><td style="font-style:italic">%DATETIME%</td>
+        </tr>
+        <tr>
+          <td>Source:</td><td style="font-style:italic">%SOURCE%</td>
+        </tr>
+        <tr>
+          <td>User:</td><td style="font-style:italic">%USERNAME%</td>
+        </tr>
+        <tr>
+          <td>Session Id:</td><td style="font-style:italic">%SESSIONID%</td>
+        </tr>
+        <tr>
+          <td>Computer:</td><td style="font-style:italic">%COMPUTER%</td>
+        </tr>
+        <tr>
+          <td>IP Address:</td><td style="font-style:italic">%IPADDRESS%</td>
+        </tr>
+        <tr>
+          <td>Log File Name:</td><td style="font-style:italic">%FILENAME%</td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <fieldset class="fieldset">
+      <legend><b>Call Stack</b></legend>
+
+      <table class="callstack_table" border="1">
+        <tr class="callstack_header"><td>Class</td><td>&nbsp;</td><td>Method</td><td>Arguments</td><td width="100px">&nbsp;</td><td>File</td><td>Line</td></tr>
+        %CALLSTACK%
+      </table>
+    </fieldset>
+  </body>
+</html>

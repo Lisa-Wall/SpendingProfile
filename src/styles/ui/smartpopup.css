@@ -1,0 +1,29 @@
+
+.ui_smartpopup
+{
+	overflow: hidden;
+	vertical-align: top;
+	padding: 1px;
+	border: <?=$PRIMARY_2?> 1px solid;
+	background-color: <?=$SECONDARY_5?>;
+}
+
+.ui_smartmenu
+{
+	width: 100%;
+	padding: 1px;
+	<?=$FONT?>
+}
+
+.ui_smartitem,
+.ui_smartitem_over
+{
+	cursor: default;
+}
+
+.ui_smartitem_over
+{
+	background-repeat: repeat-x;
+	background-position: 0px -22px;
+	background-image: url(<?=getImage('images/ui/popup/item_bg.png')?>);
+}

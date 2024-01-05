@@ -1,0 +1,39 @@
+
+.ui_popup
+{
+	<?=$FONT?>
+	white-space: nowrap;
+	background-color:<?=$SECONDARY_5?>;
+}
+
+.ui_popup_left
+{
+	width: 6px;
+	background-repeat: repeat-y;
+	background-position: left;
+	background-image:url(<?=getImage('images/ui/popup/left.png')?>);
+}
+
+.ui_popup_right
+{
+	width: 6px;
+	background-repeat: repeat-y;
+	background-position: right;
+	background-image:url(<?=getImage('images/ui/popup/right.png')?>);
+}
+
+.ui_popup_top
+{
+	width: 6px;
+	background-repeat: repeat-x;
+	background-position: top;
+	background-image:url(<?=getImage('images/ui/popup/top.png')?>);
+}
+
+.ui_popup_bottom
+{
+	width: 6px;
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-image:url(<?=getImage('images/ui/popup/bottom.png')?>);
+}

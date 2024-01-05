@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<style>
+			.page{ width: 700; color: #333333; font-size: 10pt; font-family: arial; padding: 20px; border: 1px solid gray; border-right: 3px solid gray; border-bottom: 3px solid gray; }
+			.pieImage{ width: 250px; height: 200px; }
+			.pieWindow{ width: 280px; float: left; text-align:left; border: 1px solid #309EC6; }
+			.pieHeader{ color:white; font-size: 11pt; font-weight: bold; background: #309EC6; padding: 2px; }
+			.pieContent{ padding: 10px; color: #333333; font-size: 10pt; font-family: arial; }
+			.bannerLink{ color:#309EC6; font-weight: bold; text-decoration: none; }
+			.balance{ color: #333333; font-size: 10pt; font-family: arial; }
+			.balanceLine{ border-top: 1px solid #333333; }
+		</style>
+	</head>
+	<body>
+		<table class="page" align="center" cellpadding="10px" border="0">
+			<tr>
+				<td><a href="http://www.spendingprofile.com"><img border="0" src="data:image/png;base64,<?=base64_encode(file_get_contents('../styles/images/banner/logo_white.png'));?>"/></a></td>
+				<td align="right" style="padding-right:40px"><a href="https://www.spendingprofile.com/signin.php" class="bannerLink"><img border="0" style="vertical-align:middle" src="data:image/png;base64,<?=base64_encode(file_get_contents('../styles/icons/banner/signin.png'));?>"/><br/>Sign In</a></td>
+			</tr>
+			<tr>
+				<td>Statement for <?=date('F, Y', $oStatement->iMonth);?></td>
+				<td>Prepared on <?=date('F d, Y');?></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><b style="color:#309EC6;font-size:16pt"><?=date('F, Y', $oStatement->iMonth);?></b></td>
+			</tr>
+			<tr>
+				<td colspan="2"><p>This is your monthly statement from <a href="http://www.spendingprofile.com">Spending Profile</a>. Is it up to date? If you wish, you can <a href="https://www.spendingprofile.com/signin.php">sign in</a>, update your account, and request a new statement from the website.</p></td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<table width="100%" border="0" cellpadding="10">
+						<tr>
+							<td>
+								<div class="pieWindow">
+									<div class="pieHeader">Expenses By Category</div>
+									<div class="pieContent"><img class="pieImage" src="data:image/png;base64,<?=base64_encode($oStatement->getPie('categories'));?>"/><br/>Total Expenses: <?=$oStatement->sCurrency?><?=number_format($oStatement->iCategoryExpense, 2, '.', ',');?></div>
+								</div>
+							</td>
+							<td>
+								<div class="pieWindow">
+									<div class="pieHeader">Expenses By Vendor</div>
+									<div class="pieContent"><img class="pieImage" src="data:image/png;base64,<?=base64_encode($oStatement->getPie('vendors'));?>"/><br/>Total Expenses: <?=$oStatement->sCurrency?><?=number_format($oStatement->iVendorExpense, 2, '.', ',');?></div>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<div class="pieWindow">
+									<div class="pieHeader">Income and Expenses</div>
+									<div class="pieContent"><img src="data:image/png;base64,<?=base64_encode($oStatement->getBalancePie());?>"/><br/>Balance: <span <?=($oStatement->iBalance < 0 ? 'style="color:red"' : '')?> ><?=$oStatement->sCurrency?><?=number_format($oStatement->iBalance, 2, '.', ',');?></span></div>
+								</div>
+							</td>
+							<td valign="top">
+								<div class="pieWindow">
+									<div class="pieHeader">Balance for <?=date('F, Y', $oStatement->iMonth);?></div>
+									<div style="padding:10px">
+										<table cellspacing='0' width="80%" class="balance">
+											<tr><td>Income:</td><td><?=$oStatement->sCurrency?><?=number_format($oStatement->iCredit, 2, '.', ',');?></td><td align="right"><?=number_format($oStatement->iCreditPercent, 1, '.', ',');?>%</td></tr>
+											<tr><td>Expenses:</td><td><?=$oStatement->sCurrency?><?=number_format($oStatement->iDebit, 2, '.', ',');?></td><td align="right"><?=number_format($oStatement->iDebitPercent, 1, '.', ',');?>%</td></tr>
+											<tr><td class="balanceLine"><b>Balance:<b/></td><td class="balanceLine"><span <?=($oStatement->iBalance < 0 ? 'style="color:red"' : '')?> ><?=$oStatement->sCurrency?><?=number_format($oStatement->iBalance, 2, '.', ',');?></span></td><td></td></tr>
+										</table>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+			<tr/>
+			<tr>
+				<td colspan="2"><p>If you have forgotten your password, you can get a new one <a href="http://www.spendingprofile.com/resetpassword.php">here</a>. If you prefer not to receive these statements, simply <a href="https://www.spendingprofile.com/signin.php">sign in</a> and turn them off in your account settings.</p><p>Spending Profile Administration</p><br/></td>
+			</tr>
+		</table>
+	</body>
+</html>

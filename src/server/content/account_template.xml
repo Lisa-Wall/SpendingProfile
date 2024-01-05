@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<Account Currency="$" Password="" FirstName="" LastName="" Location="" Preference="STATEMENT:1;" CreatedOn="" LastIP="" LastLogin="">
+	<Vendors></Vendors>
+	<Accounts>
+		<Account Name="Cash"/>
+		<Account Name="Checking"/>
+		<Account Name="Savings"/>
+		<Account Name="Visa"/>
+	</Accounts>
+	<Categories>
+		<Category Name="Car:Gas" BudgetAmount="0.00" BudgetActive="1"/>
+		<Category Name="Car:Insurance" BudgetAmount="0.00" BudgetActive="1"/>
+		<Category Name="Food:Groceries" BudgetAmount="0.00" BudgetActive="1"/>
+		<Category Name="Food:Restaurants" BudgetAmount="0.00" BudgetActive="1"/>
+		<Category Name="Phone:Cell Phone" BudgetAmount="0.00" BudgetActive="1"/>
+		<Category Name="Phone:Home Phone" BudgetAmount="0.00" BudgetActive="1"/>
+		<Category Name="TV" BudgetAmount="0.00" BudgetActive="1"/>
+		<Category Name="Salary" BudgetAmount="0.00" BudgetActive="0"/>
+	</Categories>
+	<Transactions></Transactions>
+</Account>

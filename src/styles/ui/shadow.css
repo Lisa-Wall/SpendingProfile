@@ -1,0 +1,51 @@
+
+.ui_shadow
+{
+	position: absolute;
+}
+
+.ui_shadow_middle
+{
+}
+
+.ui_shadow_corner,
+.ui_shadow_left,
+.ui_shadow_right,
+.ui_shadow_top,
+.ui_shadow_bottom
+{
+	opacity: 0.3;
+	filter:alpha(opacity=30);
+}
+
+.ui_shadow_left
+{
+	width: 9px;
+	background-repeat: repeat-y;
+	background-position: left;
+	background-image:url(<?=getImage('images/ui/shadow/left.png')?>);
+}
+
+.ui_shadow_right
+{
+	width: 9px;
+	background-repeat: repeat-y;
+	background-position: right;
+	background-image:url(<?=getImage('images/ui/shadow/right.png')?>);
+}
+
+.ui_shadow_top
+{
+	height: 9px;
+	background-repeat: repeat-x;
+	background-position: top;
+	background-image:url(<?=getImage('images/ui/shadow/top.png')?>);
+}
+
+.ui_shadow_bottom
+{
+	height: 9px;
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-image:url(<?=getImage('images/ui/shadow/bottom.png')?>);
+}

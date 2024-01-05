@@ -1,0 +1,23 @@
+
+.ui_dropdown_button,
+.ui_dropdown_button_over,
+.ui_dropdown_button_down
+{
+	width: 17px;
+	height: 19px;
+	cursor: default;
+	background-repeat:no-repeat;
+	background-position: 0px 0px;
+	vertical-align:bottom;
+}
+
+.ui_dropdown_button_over
+{
+	background-position: -18px 0px;
+}
+
+.ui_dropdown_button_down
+{
+	background-position: -36px 0px;
+}
+
