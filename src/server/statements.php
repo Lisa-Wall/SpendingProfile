@@ -20,7 +20,7 @@ class Statements
 		$oUsers = $this->oDatabase->execute('SELECT id, email, currency, preference FROM users');
 		$aUsers = Database::resultsToArray($oUsers);
 		
-		$oSmtp = @Mail::factory('smtp', array ('host'=>'mail.spendingprofile.com', 'auth'=>true, 'username'=>'support@spendingprofile.com', 'password'=>'aspender'));
+		$oSmtp = @Mail::factory('smtp', array ('host'=>'mail.spendingprofile.com', 'auth'=>true, 'username'=>'support@spendingprofile.com', 'password'=>'<pwd>'));
 
 		$iCount = 0;
 		foreach ($aUsers as $aUser)

@@ -146,7 +146,7 @@ class Utility
 		$sFrom = 'no-reply@spendingprofile.com';
 
 		//Build SMTP authentication the header.
-		$aSmtp = array('host'=>'mail.spendingprofile.com', 'port'=>587, 'auth'=>true, 'username'=>$sFrom, 'password'=>']r87Rzjrda5q', 'debug'=>false);
+		$aSmtp = array('host'=>'mail.spendingprofile.com', 'port'=>587, 'auth'=>true, 'username'=>$sFrom, 'password'=>'<pwd>', 'debug'=>false);
 		$aHeader = array ('MIME-Version'=>'1.0', 'Content-type'=>"text/html; charset=iso-8859-1;", 'From'=>$sFrom, 'To'=>$sTo, 'Subject'=>$sSubject);
 
 		//Create a mail object.
