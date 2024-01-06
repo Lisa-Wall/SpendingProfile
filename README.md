@@ -16,7 +16,7 @@ One big difference is simply the choice programming languages, frameworks and li
 
 Ajax, or "Asynchronous JavaScript and XML", was the big hot thing in 2009. The idea that you could update any object on a web page *without refreshing the whole  page* was indeed powerful. I was pretty excited about it myself and used it extensively in the Spending Profile project. At the time, the XMLHttpRequest object was quite new and wasn't supported by all browsers. Internet Explorer in particular still required ActiveX controls to achieve the same thing. So my code used both approaches and detected the user's browser to switch between them.
 
-Updating this today, I wouldn't bother at all with ActiveX. Modern browsers have all adopted the XMLHttpRequest object, including Microsoft Edge.
+Updating this today, I wouldn't bother at all with ActiveX, nor even XMLHttpRequest. The whole mechanism has been replaced with a built in 'fetch' function to make REST API calls to the server.
 
 ## JavaScript
 
