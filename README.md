@@ -29,13 +29,7 @@ Updating this today, I wouldn't bother at all with ActiveX, nor even XMLHttpRequ
 
 One of the things I had a lot of fun with while writing this website was the graphics. I wanted them to be interactve. So for example, on a pie graph you can click on a pie slice to drill down into it. This was done with detailed image-mapping.
 
-<img src="https://spendingprofile.com/styles/images/SamplePieChart_Flat.png"
-     width="300" 
-     style="float: left; margin-right: 10px;" />
-
-<img src="https://spendingprofile.com/styles/images/SamplePieChart_MultiLevel.png"
-     width="300" 
-      />
+<img src="https://spendingprofile.com/styles/images/SamplePieChart_FlatAndMultiLevel.png" />
 
 ## Purpose
 
